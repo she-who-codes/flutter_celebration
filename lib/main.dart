@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
   void _didTapScreen() {
-      _artboardController.play("In");
+      _artboardController.play("Pressed");
   }
 
   @override
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             splashColor: Colors.white,
             elevation: 0.0,
             child: FlareActor(
-              "assets/Flutter_Celebration.flr",
+              "assets/New_Flutter_Celebration.flr",
               controller: _artboardController,
               fit: BoxFit.contain,
               artboard: "Artboard",

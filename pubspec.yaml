@@ -42,7 +42,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - Flutter_Celebration.flr
+    - New_Flutter_Celebration.flr
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 

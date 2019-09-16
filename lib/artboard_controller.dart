@@ -11,8 +11,7 @@ class ArtboardController extends FlareController {
   double _mixSeconds = 0.1;
   List<FlareAnimationLayer> _animationLayers = [];
 
-  ActorAnimation _inAnimation;
-  //double _mixAmount = 1.0;
+
   double _speed = 1.0;
   double _mixTime = 0.0;
 
@@ -21,10 +20,7 @@ class ArtboardController extends FlareController {
 
     _artboard = artboard;
 
-    _inAnimation = artboard.getAnimation("In");
-
-    play("K_In");
-
+    play("Waiting");
   }
 
   @override
@@ -33,14 +29,14 @@ class ArtboardController extends FlareController {
 
   ///when an animation is complete, this is called
   void onCompleted(String name) {
-    if(name.compareTo("K_In") == 0){
+    if(name.compareTo("Celebrate") == 0){
       //go to waiting animation
-      play("K_Waiting");
+      play("Waiting");
 
     }
-    if(name.compareTo(_inAnimation.name) == 0){
+    if(name.compareTo("Pressed") == 0){
       //reset to other Animation, we don't want to mix anything here!
-      play("K_In", mix: 0);
+      play("Celebrate", mix: 0);
     }
   }
 
