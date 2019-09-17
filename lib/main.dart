@@ -5,10 +5,25 @@ import 'artboard_controller.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  static Map<int, Color> customColor =
+  {
+    50:Color.fromRGBO(2,86,155, .1),
+    100:Color.fromRGBO(2,86,155, .2),
+    200:Color.fromRGBO(2,86,155, .3),
+    300:Color.fromRGBO(2,86,155, .4),
+    400:Color.fromRGBO(2,86,155, .5),
+    500:Color.fromRGBO(2,86,155, .6),
+    600:Color.fromRGBO(2,86,155, .7),
+    700:Color.fromRGBO(2,86,155, .8),
+    800:Color.fromRGBO(2,86,155, .9),
+    900:Color.fromRGBO(2,86,155, 1),
+  };//#02569B == 2,86,155
+  MaterialColor myMaterialColor = MaterialColor(0xFF02569B, customColor);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Home',
       theme: ThemeData(
         // This is the theme of your application.
@@ -20,7 +35,8 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+
+        primarySwatch: myMaterialColor,
       ),
       home: MyHomePage(title: 'Flutter Celebration'),
     );
@@ -49,26 +65,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ArtboardController _artboardController;
 
-  bool _didTap = false;
-
   void initState(){
     _artboardController = ArtboardController();
 
     super.initState();
   }
   void _didTapScreen() {
-      _artboardController.play("Pressed");
+    _artboardController.play("Pressed", mix: 0);
   }
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
+          title: Text(widget.title, style: Theme.of(context).textTheme.title
+              .merge(TextStyle(color: Colors.white),)),
         ),
         body: Center(
           // Center is a layout widget. It takes a single child and positions it
