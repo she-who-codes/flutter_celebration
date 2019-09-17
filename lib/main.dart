@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             splashColor: Colors.white,
             elevation: 0.0,
             child: FlareActor(
-              "assets/New_Flutter_Celebration.flr",
+              "assets/Flutter_Twitter_Celebration.flr",
               controller: _artboardController,
               fit: BoxFit.contain,
               artboard: "Artboard",
