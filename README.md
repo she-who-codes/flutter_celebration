@@ -1,6 +1,6 @@
 # flutter_celebration_app
 
-A new Flutter application to celebrate 60k followers on Twitter
+A new Flutter application to celebrate 60k followers on Twitter using Flare!
 
 ## Getting Started
 
